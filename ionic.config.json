@@ -1,0 +1,7 @@
+{
+  "name": "listaducati",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
