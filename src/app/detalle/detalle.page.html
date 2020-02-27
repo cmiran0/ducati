@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Detalle Moto</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button>
+            </ion-back-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <h6>{{arg.get('marca')}}</h6>
+        <h1 style="color: #0d0d0d">{{arg.get('modelo')}}</h1>
+        <ion-img [src]="arg.get('foto')"></ion-img>
+        <p>{{arg.get('marca')}} {{arg.get('any')}}</p>
+        <p>{{arg.get('precio')}}</p>
+    </ion-card>
+
+</ion-content>
