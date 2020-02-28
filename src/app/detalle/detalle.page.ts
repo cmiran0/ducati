@@ -7,12 +7,12 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
     styleUrls: ['./detalle.page.scss'],
 })
 export class DetallePage {
-
     public arg: ParamMap;
 
     constructor(private activatedRoute: ActivatedRoute) {
         this.arg = this.activatedRoute.snapshot.paramMap;
     }
+
 
 }
 

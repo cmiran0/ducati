@@ -1,30 +1,21 @@
-<ion-header [translucent]="true">
+<ion-header>
     <ion-toolbar>
         <ion-buttons slot="start">
-            <ion-menu-button menu="primerMenu"></ion-menu-button>
+            <ion-back-button>
+            </ion-back-button>
         </ion-buttons>
-        <ion-title>
-            Choose your bike
-        </ion-title>
+        <ion-title>{{arg.get("marca")}}</ion-title>
     </ion-toolbar>
+
 </ion-header>
-
-
 <ion-content [fullscreen]="true">
     <ion-card>
         <ion-list>
             <ion-item *ngFor="let c of componentes" [routerLink]="['/detalle',c]" detail>
                 <ion-img [src]="c.foto" style="width: 80px; height: 80px; padding-right: 1em"></ion-img>
+                <!-- Muestra el modelo -->
                 <ion-label>{{c.modelo}}</ion-label>
             </ion-item>
         </ion-list>
-
-
     </ion-card>
-    <!-- fab -->
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button>
-            <ion-icon name="add" routerLink="/add"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
 </ion-content>

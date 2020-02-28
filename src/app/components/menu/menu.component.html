@@ -1,0 +1,17 @@
+<ion-menu side="start" menuId="primerMenu" contentId="main">
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>Filtro Marcas</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle>
+                <ion-item *ngFor="let c of componentes" [routerLink]="['/detallemotos',c]" detail>
+                    <ion-img [src]="c.foto" style="width: 80px; height: 80px; padding-right: 1em"></ion-img>
+                    <ion-label>{{c.marca}}</ion-label>
+                </ion-item>
+            </ion-menu-toggle>
+        </ion-list>
+    </ion-content>
+</ion-menu>
