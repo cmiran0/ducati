@@ -30,4 +30,15 @@ export class AddPage {
             precio: ['', Validators.required],
         });
     }
+
+   /* deleteMoto(idMoto) {
+        const url = 'http://motos.puigverd.org/moto/' + idMoto;
+        fetch(url, {
+            "method": "DELETE"
+        })
+            .then(response => {
+                this.router.navigateByUrl('/home').then(r => '');
+            });
+    }*/
+
 }

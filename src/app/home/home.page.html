@@ -11,6 +11,7 @@
 
 
 <ion-content [fullscreen]="true">
+
     <ion-card>
         <ion-list>
             <ion-item *ngFor="let c of componentes" [routerLink]="['/detalle',c]" detail>
@@ -22,9 +23,12 @@
 
     </ion-card>
     <!-- fab -->
+
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
         <ion-fab-button>
             <ion-icon name="add" routerLink="/add"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
+
 </ion-content>

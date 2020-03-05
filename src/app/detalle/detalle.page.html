@@ -11,11 +11,18 @@
 
 <ion-content>
     <ion-card>
-        <h6>{{arg.get('marca')}}</h6>
-        <h1 style="color: #0d0d0d">{{arg.get('modelo')}}</h1>
-        <ion-img [src]="arg.get('foto')"></ion-img>
-        <p>{{arg.get('marca')}} {{arg.get('any')}}</p>
-        <p>{{arg.get('precio')}}</p>
+        <ion-card-content>
+            <h6>{{arg.get('marca')}}</h6>
+            <h1 style="color: #0d0d0d">{{arg.get('modelo')}}</h1>
+            <ion-img [src]="arg.get('foto')"></ion-img>
+            <p>{{arg.get('marca')}} {{arg.get('any')}}</p>
+            <p>{{arg.get('precio')}}</p>
+        </ion-card-content>
+
     </ion-card>
+    <ion-card>
+        <ion-button name="delete" expand="full" (click)="presentAlert(arg.get('id'))" >Delete</ion-button>
+    </ion-card>
+
 
 </ion-content>

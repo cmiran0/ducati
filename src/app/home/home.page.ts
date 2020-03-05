@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 
 
 @Component({
@@ -10,14 +10,19 @@ export class HomePage {
     private componentes: MyMotos[];
 
     constructor() {
-        this.getJson('http://motos.puigverd.org/motos').then(r => '');
+
     }
 
+    ionViewWillEnter() {
+        this.getJson('http://motos.puigverd.org/motos').then(r => '');
+    }
 
     async getJson(url) {
         const respuesta = await fetch(url);
         this.componentes = await respuesta.json();
     }
+
+
 
 
 }
