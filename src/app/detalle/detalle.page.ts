@@ -38,9 +38,9 @@ export class DetallePage {
     }
 
     deleteMoto(idMoto) {
-        const url = 'http://motos.puigverd.org/moto/' + idMoto;
+        const url = 'https://motos.puigverd.org/moto/' + idMoto;
         fetch(url, {method: 'DELETE'}).then(response => {
-            this.router.navigateByUrl('/home').then(r => '');
+            this.router.navigateByUrl('/home');
         });
     }
 

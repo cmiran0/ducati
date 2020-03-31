@@ -10,36 +10,34 @@
 
 <ion-content>
     <ion-card>
-        <form [formGroup]="myForm" (ngSubmit)="saveData()">
-            <ion-list>
-                <ion-item>
-                    <ion-label stacked>Marca:</ion-label>
-                    <ion-input formControlName="marca" type="text"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label stacked>Modelo:</ion-label>
-                    <ion-input formControlName="modelo" type="text"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label stacked>Año:</ion-label>
-                    <ion-input formControlName="any" type="number"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label stacked>Foto:</ion-label>
-                    <ion-input formControlName="foto" type="text"></ion-input>
-                </ion-item>
-                <ion-item>
-                    <ion-label stacked>Precio:</ion-label>
-                    <ion-input formControlName="precio" type="number"></ion-input>
-                </ion-item>
-            </ion-list>
-        </form>
+        <ion-card-content>
+            <ion-item>
+                <ion-label position="floating">Brand</ion-label>
+                <ion-input type="string" [(ngModel)]="marca"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Model</ion-label>
+                <ion-input type="string" [(ngModel)]="modelo"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Year</ion-label>
+                <ion-input type="number" [(ngModel)]="any"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Photo</ion-label>
+                <ion-input type="string" [(ngModel)]="foto"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Price</ion-label>
+                <ion-input type="number" [(ngModel)]="precio"></ion-input>
 
+            </ion-item>
+        </ion-card-content>
 
     </ion-card>
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab horizontal="end" slot="fixed" vertical="bottom" class="ion-padding">
         <ion-fab-button>
-            <ion-icon name="save" ></ion-icon>
+            <ion-icon name="save" (click)="addBike()"></ion-icon>
         </ion-fab-button>
     </ion-fab>
 </ion-content>

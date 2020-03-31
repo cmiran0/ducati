@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NavController} from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-add',
@@ -8,37 +9,41 @@ import {NavController} from '@ionic/angular';
     styleUrls: ['./add.page.scss'],
 })
 export class AddPage {
-    myForm: FormGroup;
+    marca: string;
+    modelo: string;
+    any: string;
+    foto: string;
+    precio: number;
 
-    constructor(public navCtrl: NavController,
-                public formBuilder: FormBuilder
-    ) {
-        this.myForm = this.createMyForm();
+    constructor(private router: Router) {
     }
 
-
-    saveData() {
-        console.log(this.myForm.value);
+    goHome() {
+        this.router.navigate(['home/todas']).then(r => console.log(r));
     }
 
-    private createMyForm() {
-        return this.formBuilder.group({
-            marca: ['', Validators.required],
-            modelo: ['', Validators.required],
-            any: ['', Validators.required],
-            foto: ['', Validators.required],
-            precio: ['', Validators.required],
-        });
-    }
-
-   /* deleteMoto(idMoto) {
-        const url = 'http://motos.puigverd.org/moto/' + idMoto;
-        fetch(url, {
-            "method": "DELETE"
+    async addBike() {
+        fetch('https://motos.puigverd.org/moto', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                marca: this.marca,
+                modelo: this.modelo,
+                year: this.any,
+                foto: this.foto,
+                precio: this.precio + ' $',
+            })
         })
             .then(response => {
-                this.router.navigateByUrl('/home').then(r => '');
+                this.goHome();
+                console.log(response);
+            })
+            .catch(err => {
+                console.log(err);
             });
-    }*/
+    }
+
 
 }
