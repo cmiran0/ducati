@@ -16,19 +16,28 @@
         <ion-list>
             <ion-item *ngFor="let c of componentes" [routerLink]="['/detalle',c]" detail>
                 <ion-img [src]="c.foto" style="width: 80px; height: 80px; padding-right: 1em"></ion-img>
-                <ion-label>{{c.modelo}}</ion-label>
+                <ion-label class="ion-text-wrap" style="margin-left: 16px">
+                    <h6>{{c.marca}}</h6>
+                    <p>{{c.modelo}}</p>
+                </ion-label>
             </ion-item>
         </ion-list>
-
-
     </ion-card>
-    <!-- fab -->
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
         <ion-fab-button>
-            <ion-icon name="add" routerLink="/add"></ion-icon>
-        </ion-fab-button>
-    </ion-fab>
+            <ion-icon name="arrow-up-circle-outline"></ion-icon>
 
+
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button  >
+                <ion-icon name="add-circle-outline" routerLink="/add"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button >
+                <ion-icon name="camera-outline" routerLink="/altamotofoto"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
 
 </ion-content>

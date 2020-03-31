@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: 'detallemotos',
     loadChildren: () => import('./detallemotos/detallemotos.module').then( m => m.DetallemotosPageModule)
+  },  {
+    path: 'altamotofoto',
+    loadChildren: () => import('./altamotofoto/altamotofoto.module').then( m => m.AltamotofotoPageModule)
   },
+
 ];
 
 @NgModule({
