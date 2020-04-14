@@ -23,9 +23,14 @@
         <ion-label position="floating">Year</ion-label>
         <ion-input type="number" [(ngModel)]="any"></ion-input>
       </ion-item>
+
       <ion-item>
+        <label for="foto">
+          <img id="icon" src="../../assets/camara.png">
+        </label>
         <input id="foto" type="file" name="foto" accept="image/*" capture="camera" />
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Price</ion-label>
         <ion-input type="number" [(ngModel)]="precio"></ion-input>
